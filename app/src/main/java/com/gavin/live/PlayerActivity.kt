@@ -2,6 +2,7 @@ package com.gavin.live
 
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.exoplayer2.MediaItem
@@ -20,6 +21,13 @@ class PlayerActivity : AppCompatActivity() {
         setContentView(R.layout.activity_player_layout)
 
         init();
+
+        val cQueue = CQueue()
+        cQueue.appendTail(10)
+        cQueue.appendTail(12)
+        cQueue.appendTail(14)
+        val i = cQueue.deleteHead()
+        Log.e("AAA", "deleteHead = $i")
     }
 
     private fun init() {
