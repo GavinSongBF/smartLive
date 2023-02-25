@@ -3,6 +3,7 @@ package com.gavin.live
 import android.util.Log
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
+import com.gavin.live.utils.SortUtils
 import org.junit.Assert.*
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -33,15 +34,20 @@ class ExampleInstrumentedTest {
 
     @Test
     fun useAppTest(){
-        var arry = Array(3) { it -> (it * 2) };
+        val original = intArrayOf(9,1,5,8,3,7,4,6,2);
+        val bubbleSort = SortUtils.bubbleSort(original);
+        Log.e("AAA","bubbleSort ="+bubbleSort.contentToString())
 
-        Log.e("AAA","arry ="+arry.size)
+        val original2 = intArrayOf(9,1,5,8,3,7,4,6,2);
+        val bubbleSort2 = SortUtils.bubbleSort2(original2);
+        Log.e("AAA","bubbleSort2 ="+bubbleSort2.contentToString())
 
-        val cQueue = CQueue()
-        cQueue.appendTail(10)
-        cQueue.appendTail(12)
-        cQueue.appendTail(14)
-        val i = cQueue.deleteHead()
-        Log.e("AAA", "deleteHead = $i")
+        val original3 = intArrayOf(9,1,5,8,3,7,4,6,2);
+        val selectSort = SortUtils.selectSort(original3);
+        Log.e("AAA","selectSort ="+selectSort.contentToString())
+
+        val original4 = intArrayOf(9,1,5,8,3,7,4,6,2);
+        val insertSort = SortUtils.insertSort(original4);
+        Log.e("AAA","insertSort ="+insertSort.contentToString())
     }
 }
